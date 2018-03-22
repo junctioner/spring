@@ -33,5 +33,11 @@ public class Car {
     public void run() {
         log.debug("汽车{},跑起来了!", name);
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+        log.debug("释放占用资源。");
+    }
 }
 
